@@ -14,4 +14,14 @@ class Skill{
         Skill.submitSkill(skillName, creaturesSkills, creatureId)
         event.target.reset()
     }
+
+    renderSkill(creaturesSkills){
+        const li = document.createElement('li')
+        const deleteButton = document.createElement('button')
+        li.dataset.id = this.id
+        li.innerText = this.name
+        li.append(deleteButton)
+        deleteButton.addEventListener("click", this.deleteSkill)
+        creaturesSkills.appendChild(li)
+    }
 }
